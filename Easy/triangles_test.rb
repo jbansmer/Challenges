@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require_relative 'triangles'
 
@@ -65,42 +67,42 @@ class TriangleTest < Minitest::Test
   def test_no_size_is_illegal
     # skip
     assert_raises(ArgumentError) do
-      triangle = Triangle.new(0, 0, 0)
+      Triangle.new(0, 0, 0)
     end
   end
 
   def test_negative_size_is_illegal
     # skip
     assert_raises(ArgumentError) do
-      triangle = Triangle.new(3, 4, -5)
+      Triangle.new(3, 4, -5)
     end
   end
 
   def test_size_inequality_is_illegal
     # skip
     assert_raises(ArgumentError) do
-      triangle = Triangle.new(1, 1, 3)
+      Triangle.new(1, 1, 3)
     end
   end
 
   def test_size_inequality_is_illegal_2
     # skip
     assert_raises(ArgumentError) do
-      triangle = Triangle.new(7, 3, 2)
+      Triangle.new(7, 3, 2)
     end
   end
 
   def test_size_inequality_is_illegal_3
     # skip
     assert_raises(ArgumentError) do
-      triangle = Triangle.new(10, 1, 3)
+      Triangle.new(10, 1, 3)
     end
   end
 
   def test_size_inequality_is_illegal_4
     # skip
     assert_raises(ArgumentError) do
-      triangle = Triangle.new(1, 1, 2)
+      Triangle.new(1, 1, 2)
     end
   end
 end

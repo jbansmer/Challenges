@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class Triangle
   attr_reader :sides
-  
+
   def initialize(a, b, c)
     @sides = [a, b, c]
-    raise ArgumentError.new 'Side lengths of zero not allowed' unless @sides.none? 0
-    raise ArgumentError.new 'Invalid side lengths -- not a triangle!' unless valid?
+    raise ArgumentError, 'Side lengths of zero not allowed' unless @sides.none? 0
+    raise ArgumentError, 'Invalid side lengths -- not a triangle!' unless valid?
   end
 
   def kind
@@ -17,8 +19,9 @@ class Triangle
 
   def valid?
     return false unless sides[0] + sides[1] > sides[2] &&
-                    sides[1] + sides[2] > sides[0] &&
-                    sides[2] + sides[0] > sides[1]
+                        sides[1] + sides[2] > sides[0] &&
+                        sides[2] + sides[0] > sides[1]
+
     true
   end
 end
