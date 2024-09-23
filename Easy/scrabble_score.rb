@@ -30,7 +30,6 @@ class Scrabble
   end
 
   def self.score(word)
-    class_method_word = Scrabble.new(word)
-    class_method_word.score
+    Scrabble.new(word).score
   end
 end
