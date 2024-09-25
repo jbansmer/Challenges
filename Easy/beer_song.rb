@@ -28,9 +28,6 @@ class BeerSong
   end
 
   def self.lyrics
-    all_verses = (0..99).to_a.reverse
-    all_verses.map do |bottle_count|
-      verse(bottle_count)
-    end.join("\n")
+    verses(99, 0)
   end
 end
