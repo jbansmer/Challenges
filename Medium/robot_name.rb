@@ -6,16 +6,21 @@ class Robot
 
   @@chosen_names = []
 
+  def self.chosen_names
+    @@chosen_names
+  end
+
   def initialize
     reset
-    @@chosen_names << @name
   end
 
   def reset
+    @@chosen_names.delete @name if @name
     loop do
       @name = assign_name
       break unless @@chosen_names.include? @name
     end
+    @@chosen_names << @name
   end
 
   private
