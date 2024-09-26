@@ -27,6 +27,9 @@ class Robot
 
   def assign_name
     letters = ('A'..'Z').to_a
-    "#{letters[rand(26)]}#{letters[rand(26)]}#{rand(10)}#{rand(10)}#{rand(10)}"
+    new_name = ''
+    2.times { |_| new_name += letters[rand(26)].to_s }
+    3.times { |_| new_name += rand(10).to_s }
+    new_name
   end
 end
