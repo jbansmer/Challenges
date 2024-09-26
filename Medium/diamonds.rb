@@ -17,8 +17,7 @@ class Diamond
 
   private
 
-  attr_reader :max_letter, :width, :all_letters
-  attr_accessor :top_half, :bottom_half
+  attr_reader :max_letter, :width, :all_letters, :top_half, :bottom_half
 
   def initialize(max_letter)
     @max_letter = max_letter
