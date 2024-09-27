@@ -28,6 +28,8 @@ class Meetup
     end
   end
 
+  private
+
   def first_to_fifth(day_of_week, freq_indicator)
     meetup_date = Date.civil(@year, @month, @day)
     counter = 0
