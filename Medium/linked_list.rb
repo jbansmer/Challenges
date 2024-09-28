@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# top-level comment to satisfy Rubocop
 class SimpleLinkedList
   def initialize
     @list = []
