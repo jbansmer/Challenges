@@ -37,14 +37,16 @@ class CustomSet
     intersected = (set + other.set).select do |num|
       set.include?(num) && other.set.include?(num)
     end
-    intersected.uniq
+    CustomSet.new(intersected.uniq)
   end
 
   def difference(other)
-    set.select { |num| !other.set.include? num }
+    different = set.select { |num| !other.set.include? num }
+    CustomSet.new(different)
   end
 
   def union(other)
-    (set + other.set).uniq.sort
+    unified = (set + other.set).uniq.sort
+    CustomSet.new(unified)
   end
 end
