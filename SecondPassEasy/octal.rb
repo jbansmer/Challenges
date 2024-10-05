@@ -4,17 +4,21 @@ class Octal
   end
 
   def to_decimal
-    return 0 if @octal.chars.any? do |char|
-      ('a'..'z').to_a.include? char.downcase
-    end
+    return 0 unless valid?
 
     octal_number = @octal.chars.reverse.map(&:to_i)
-    return 0 if octal_number.include?(8) || octal_number.include?(9)
-
     decimal_number = 0
     octal_number.length.times do |mag|
       decimal_number += (octal_number[mag] * (8**mag))
     end
     decimal_number
+  end
+
+  private
+
+  def valid?
+    @octal.chars.all? do |char|
+      ('0'..'7').to_a.include? char
+    end
   end
 end
