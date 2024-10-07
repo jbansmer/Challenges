@@ -6,12 +6,18 @@ class SumOfMultiples
   def to(number)
     multiples = []
     number.times do |num|
-      @set.each { |mult| multiples << num if (num % mult).zero? }
+      multiples << num if multiple?(num)
     end
     multiples.uniq.sum
   end
 
   def self.to(number)
     SumOfMultiples.new.to(number)
+  end
+
+  private
+
+  def multiple?(num)
+    @set.any? { |mult| (num % mult).zero? }
   end
 end
