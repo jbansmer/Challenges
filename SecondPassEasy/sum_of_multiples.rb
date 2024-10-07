@@ -5,7 +5,7 @@ class SumOfMultiples
 
   def to(number)
     multiples = []
-    number.times do |num|
+    1.upto(number - 1) do |num|
       multiples << num if multiple?(num)
     end
     multiples.sum
