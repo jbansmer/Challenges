@@ -8,7 +8,7 @@ class SumOfMultiples
     number.times do |num|
       multiples << num if multiple?(num)
     end
-    multiples.uniq.sum
+    multiples.sum
   end
 
   def self.to(number)
