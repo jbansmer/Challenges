@@ -1,4 +1,7 @@
 class Clock
+  MINS_PER_HOUR = 60
+  HOURS_PER_DAY = 24
+
   def initialize(hours, minutes)
     @hours = hours
     @minutes = minutes
@@ -35,13 +38,13 @@ class Clock
   attr_accessor :hours, :minutes
 
   def add_reformat
-    until minutes < 60
-      self.minutes -= 60
+    until minutes < MINS_PER_HOUR
+      self.minutes -= MINS_PER_HOUR
       self.hours += 1
     end
 
-    until hours < 24
-      self.hours -= 24
+    until hours < HOURS_PER_DAY
+      self.hours -= HOURS_PER_DAY
     end
 
     self
@@ -49,12 +52,12 @@ class Clock
 
   def sub_reformat
     until minutes >= 0
-      self.minutes += 60
+      self.minutes += MINS_PER_HOUR
       self.hours -= 1
     end
 
     until hours >= 0
-      self.hours += 24
+      self.hours += HOURS_PER_DAY
     end
 
     self
