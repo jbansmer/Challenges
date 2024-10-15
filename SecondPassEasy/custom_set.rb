@@ -33,18 +33,25 @@ class CustomSet
   end
 
   def intersection(other)
-    new_set = set.intersection(other.set)
+    new_set = set.select do |num|
+      other.set.include?(num)
+    end
     CustomSet.new(new_set)
   end
 
   def difference(other)
-    new_set = set.difference(other.set)
+    new_set = set.select do |num|
+      !other.set.include?(num)
+    end
     CustomSet.new(new_set)
   end
 
   def union(other)
-    new_set = set.concat(other.set).uniq.sort
-    CustomSet.new(new_set)
+    new_set = set
+    other.set.each do |num|
+      new_set.push(num) unless new_set.include?(num)
+    end
+    CustomSet.new(new_set.sort)
   end
 
   protected
