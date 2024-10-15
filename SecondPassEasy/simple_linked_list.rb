@@ -57,8 +57,6 @@ class SimpleLinkedList
 
   def to_a_no_reverse
     new_list = @list.map(&:datum)
-    reconfigure
-    new_list
   end
 end
 
