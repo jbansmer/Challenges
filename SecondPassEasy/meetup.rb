@@ -26,6 +26,8 @@ class Meetup
     end
   end
 
+  private
+
   def last(day_target)
     @date = @date.next_month.prev_day
     @date = @date.prev_day until @date.wday == day_target
